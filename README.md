@@ -26,8 +26,10 @@ See a snapshot of the success below.
 * [VERSION 2](#version-2)
 * [Console improvements](#console-improvements)
 * [Dataflow and Relationship diagram](#sample-dataflow-relationship-diagram-for-implementations)
-* [Additional updates 1: Web framework and Templating](#additional-updates-1)
-* [VERSION 3](#version-3)
+* [Additional updates 1: Deploy Static](#additional-updates-2)
+* [Additional updates 2: Web framework and Templating](#additional-updates-1)
+* [VERSION 3: RESTful API](#version-3)
+* [VERSION 4](#version-3)
 * [Bugs](#bugs)
 * [Authors](#authors)
 * [License](#license)
@@ -35,7 +37,7 @@ See a snapshot of the success below.
 ## THE CONSOLE
 The console is the first segment of the AirBnB project. A command line interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
-This aspect of the clone was co-built with [Lateef](https://github.com/Wireless-XZ) and the original repo resides [here](https://github.com/David-Inkheart/AirBnB_clone)
+### This aspect of the clone was co-built with [Lateef](https://github.com/Wireless-XZ) and the original repo resides [**HERE**](https://github.com/David-Inkheart/AirBnB_clone)
 
 Concepts learned by building this command interpreter include:
 
@@ -193,7 +195,7 @@ EOF  all  create  destroy  help  quit  show  update
   
 ![image](https://user-images.githubusercontent.com/106752187/232076687-5c311cf7-b494-413e-8f97-4015f2ae8b71.png)
 
-For this aspect, I collaborated with [Davidson](https://github.com/rotex5). One of the goals of this aspect was to simulate what is obtainable in the industry, where we will work on an existing codebase majority of the time. Our first thoughts upon looking at it might include:
+For this aspect, I collaborated with [Davidson](https://github.com/rotex5). One of the goals of this aspect was to simulate what is obtainable in the industry, where we will work on an existing codebase majority of the time. Our first thoughts upon looking at it included:
 
 “Who did this code?”, 
 “How it works?”, 
@@ -207,17 +209,19 @@ But the worst thing we could possibly do is to redo everything. The existing cod
 
 First, we were to fork an existing [codebase](https://github.com/justinmajetich/AirBnB_clone) where the console had already been built, run our checks, available tests. Then build on the existing, adding more test where necessary. 
 
+### Our original repo lives [**here**](https://github.com/David-Inkheart/AirBnB_clone_v2)
+
 The major additions we did on this Iteration includes: Console improvement and using an ORM to map our objects to a database. The goals we were able to accomplish include: 
 
-* Implementation of Unit testing in a large project
-* Using `*args` and `**kwargs` and handling named arguments in a function
-* Creating a MySQL database and creating a MySQL user with granted privileges
-* Using an ORM(SqlAlchemy) to map a Python Class to MySQL table
+* Improving on the console someone else built using [cmd module](https://docs.python.org/3/library/cmd.html)
+* Implementation of [Unit testing](https://docs.python.org/3/library/unittest.html#module-unittest) in a large project
+* Using [`*args` and `**kwargs`](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/) and handling named arguments in a function
+* Creating a [MySQL](https://dev.mysql.com/doc/refman/8.0/en/sql-statements.html) database and creating a MySQL user with [granted privileges](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
+* Using an ORM([SqlAlchemy](https://docs.sqlalchemy.org/en/13/orm/tutorial.html)) to map a Python Class to MySQL table
 * Handling 2 different storage engines with the same codebase (jsonified File storage and MySQL db)
-* Using environment variables
+* Using [environment variables](https://docs.python.org/3/library/os.html?highlight=env#os.getenv)
 * Managing both storage engines and performing CRUD on both seamlessly
 
-Our original repo lives [here](https://github.com/David-Inkheart/AirBnB_clone_v2)
 
 ## Console improvements
 
@@ -245,11 +249,31 @@ If any parameter doesn’t fit with these requirements or can’t be recognized 
 
 ![image](https://user-images.githubusercontent.com/106752187/232045286-eeb2ecd3-b64e-4fa1-9ff4-511a923fd303.png)
 
+
 <br/>
-  
+
 ## Additional updates 1
 
-#### Additional updates were added by me as part of my learning journey with ALX. 
+#### Additional updates were added by me as part of my learning journey with ALX. - DEPLOYMENT
+
+![image](https://user-images.githubusercontent.com/106752187/232111576-cb4fd889-f600-4cdc-84cd-02238d93a84d.png)
+
+As part of the SysAdmin sub-track in the program, I learnt about servers and load balancing, I was given acccess to `2 web servers + 1 load balancer` but nothing to distribute with them yet. This update uses them to take the project so far, public!😎
+
+- In this first deployment aspect, I deployed my `web_static` work. I used [Fabric](https://www.pythonforbeginners.com/systems-programming/how-to-use-fabric-in-python) (for Python3). 
+- Fabric is a Python library and command-line tool for streamlining the use of SSH for application deployment or systems administration tasks. It provides a basic suite of operations for executing local or remote shell commands (normally or via sudo) and uploading/downloading files, as well as auxiliary functionality such as prompting the running user for input, or aborting execution.
+- The important concept learned here: execution of commands locally or remotely. Locally means in my laptop (physical laptop or inside my Vagrant), and Remotely means on my server(s). [Fabric](https://www.digitalocean.com/community/tutorials/how-to-use-fabric-to-automate-administration-tasks-and-deployments) is taking care of all network connections (SSH, SCP etc.), it’s an easy tool for transferring, executing, etc. commands from locale to a remote server.
+
+Generally, I learned:
+- How to execute Fabric command locally and remotely, transfer files with Fabric, deploy code to a server easily by compressing into a tgz archive
+- How to manage [Nginx configuration](http://nginx.org/en/docs/beginners_guide.html) and the difference between [root and alias](https://blog.heitorsilva.com/en/nginx/diferenca-entre-root-e-alias-do-nginx/) in a Nginx configuration
+- This was also a brush with [CI/CD](https://digital.ai/catalyst-blog/walk-before-you-run-understanding-ci-in-cd/) - a [lean/agile](http://agilemanifesto.org/principles.html) way of working. The project was not done yet, but going forward, I would continuously integrate and continuously deploy. 
+
+<br/>
+  
+## Additional updates 2
+
+#### Additional updates were added by me as part of my learning journey with ALX. - WEB FRAMEWORK AND TEMPLATING
 
 ![image](https://user-images.githubusercontent.com/106752187/232049489-51aa72e9-46a9-4ce7-ab4a-904fd3250717.png)
 
@@ -266,11 +290,32 @@ At the end of this,  HBNB came alive!
 
 ![popover2](https://user-images.githubusercontent.com/106752187/232055573-1112923c-f358-421f-a749-e6706a5bbdd1.jpg)
 
+
+### all additional updates are still in the same verson repo [**here**](https://github.com/David-Inkheart/AirBnB_clone_v2)
+
  <br/>
 
 ## VERSION 3
 
+#### Implementation of [RESTful API](https://www.restapitutorial.com/)
 
+![image](https://user-images.githubusercontent.com/106752187/232115229-2ba53c93-f4da-4178-8258-bbe679fed508.png)
+
+
+Once again, we were mandated to work with a new [codebase](https://github.com/alexaorrico/AirBnB_clone_v2) that had covered our journey so far into building the clone.
+
+I and [Lateef](https://github.com/Wireless-XZ) collaborated on this and we learned:
+
+- [flask_cheatsheet.pdf](https://github.com/David-Inkheart/HBNB_V4/files/11235699/flask_cheatsheet.pdf)
+- What [REST](), [API]() and [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) mean. 
+- How to design a [RESTful](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask) API with Python and Flask
+- Implementation of CRUD methods to consume created RESTFUL API: 
+
+### This version repo can be found [**HERE**](https://github.com/David-Inkheart/AirBnB_clone_v3)
+
+<br/>
+
+## VERSION 4
 
 ## Bugs
 No known bugs at this time. 
