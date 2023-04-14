@@ -364,7 +364,7 @@ Error: No module named 'pathlib2'
 $ sudo pip3 install pathlib2
 ```
   
-Some configuration files, backups and scripts used to transfer or install dependencies for this project have been removed from the school server (was shut down after finishing the program) and saved [HERE]() 
+Some configuration files, backups and scripts used to transfer or install dependencies for this project have been removed from the school server (was shut down after finishing the program) and saved [HERE](https://github.com/David-Inkheart/HBNB_V4/tree/main/hbnb-scripts-and-configs) 
  
 <br/>
 
