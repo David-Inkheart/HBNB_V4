@@ -1,12 +1,21 @@
 # Simple AirBnB Clone
 
-This repo holds the culmination of **HBNB** - a Fullstack Project I did at [Alx-Software Engineering Programme](https://www.alxafrica.com/software-engineering/) that collectively covers fundamental concepts of higher level programming. It is built in stages(versions) and involves collaborating with peers as was advised in the programme. The goal of AirBnB Clone project was to eventually deploy on a server, a simple copy of the AirBnB Website(HBnB). See a snapshot of the success below. 
+This repo holds the culmination of **HBNB** - a Fullstack Project I did at [Alx-Software Engineering Programme](https://www.alxafrica.com/software-engineering/) that collectively covers fundamental concepts of higher level programming. It is built in stages(versions) and involves collaborating with peers at several stages as was advised in the programme. The goal of AirBnB Clone project is to eventually deploy on a server, a simple copy([HBnB](http://web-01.david-inkheart.tech/)) of the [AirBnB Website](https://www.airbnb.com/). 
+
+It is a complete web application composed by:
+
+- A command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
+- A website (the front-end) that shows the final product to everybody: static and dynamic
+- A database or files that store data (data = objects)
+- An API that provides a communication interface between the front-end and the data (retrieve, create, delete, update them)
+
+See a snapshot of the success below. 
 
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/standard/semistandard)
 
 ![Hosted-AirBnB-Clone 2023-03-08 163931](https://user-images.githubusercontent.com/106752187/232021210-813cf56b-8462-4c29-a475-9bb74d52a332.jpg)
 
-### Below is a unique overview and not an exhaustive documentation of earlier processes and aspects of the project that lead to this final repo.
+### This is a unique overview and not an exhaustive documentation of different processes and aspects of the project that lead to this final repo.
 
 ## Table of Content
 * [THE CONSOLE](#the-console)
@@ -27,6 +36,14 @@ This repo holds the culmination of **HBNB** - a Fullstack Project I did at [Alx-
 The console is the first segment of the AirBnB project. A command line interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
 This aspect of the clone was co-built with [Lateef](https://github.com/Wireless-XZ) and the original repo resides [here](https://github.com/David-Inkheart/AirBnB_clone)
+
+Concepts learned by building this command interpreter include:
+
+- Creating a Python [package](https://docs.python.org/3.4/tutorial/modules.html#packages) and creating a command interpreter in Python using the [cmd module](https://docs.python.org/3.8/library/cmd.html)
+- [Unit testing](https://docs.python.org/3.8/library/unittest.html#module-unittest) and how to implement it in a large project
+- Serializing and deserializing a Class, How to write and read a JSON file.
+- Mananaging [datetime](https://docs.python.org/3.8/library/datetime.html) and making use of an [UUID](https://docs.python.org/3.8/library/uuid.html) for unique IDs
+- ['*args' and '**kwargs'](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/) and handling named arguments in a function
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
@@ -81,7 +98,7 @@ Classes inherited from Base Model:
 * `def save(self)` - serializes __objects to the JSON file (path: __file_path)
 * ` def reload(self)` -  deserializes the JSON file to __objects
 
-#### `/tests` directory contains all unit test cases for this project:
+#### `/tests` directory contains all [unit test](https://docs.python.org/3.4/library/unittest.html#module-unittest) cases for this project:
 [/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
 TestBaseModelDocs class:
 * `def setUpClass(cls)`- Set up for the doc tests
@@ -170,10 +187,13 @@ EOF  all  create  destroy  help  quit  show  update
 (hbnb) quit
 ```
 
-
+<br/>
+  
 ## VERSION 2
+  
+![image](https://user-images.githubusercontent.com/106752187/232076687-5c311cf7-b494-413e-8f97-4015f2ae8b71.png)
 
-For this aspect, I collaborated with [Davidson](https://github.com/rotex5). One of the goals of this aspect was to simulate what is obtainable in the industry, where we will work on an existing codebase 90% of the time. Our first thoughts upon looking at it might include:
+For this aspect, I collaborated with [Davidson](https://github.com/rotex5). One of the goals of this aspect was to simulate what is obtainable in the industry, where we will work on an existing codebase majority of the time. Our first thoughts upon looking at it might include:
 
 “Who did this code?”, 
 “How it works?”, 
@@ -185,7 +205,7 @@ For this aspect, I collaborated with [Davidson](https://github.com/rotex5). One 
 
 But the worst thing we could possibly do is to redo everything. The existing codebase might be perfect, or it might have errors. We were taught not to always trust the existing codebase!
 
-First, we were to fork an existing codebase where the console had already been built, run our checks, available tests. Then build on the existing, adding more test where necessary. 
+First, we were to fork an existing [codebase](https://github.com/justinmajetich/AirBnB_clone) where the console had already been built, run our checks, available tests. Then build on the existing, adding more test where necessary. 
 
 The major additions we did on this Iteration includes: Console improvement and using an ORM to map our objects to a database. The goals we were able to accomplish include: 
 
@@ -225,7 +245,8 @@ If any parameter doesn’t fit with these requirements or can’t be recognized 
 
 ![image](https://user-images.githubusercontent.com/106752187/232045286-eeb2ecd3-b64e-4fa1-9ff4-511a923fd303.png)
 
-
+<br/>
+  
 ## Additional updates 1
 
 #### Additional updates were added by me as part of my learning journey with ALX. 
@@ -234,10 +255,10 @@ If any parameter doesn’t fit with these requirements or can’t be recognized 
 
 The goal of this includes:
 
-- learning about Web Frameworks and how to build a web framework with Flask
-- defining routes in Flask and handling variables in a route
-- creating a HTML response in Flask by using a template ([Jinja](https://jinja.palletsprojects.com/en/2.9.x/templates/))
-- creating dynamic templates (using loops, conditions…) and displaying data from a MySQL database in HTML
+- learning about [Web Frameworks](https://intelegain-technologies.medium.com/what-are-web-frameworks-and-why-you-need-them-c4e8806bd0fb) and how to build a web framework with [Flask](https://flask.palletsprojects.com/en/1.0.x/quickstart/#a-minimal-application)
+- defining [routes](https://flask.palletsprojects.com/en/1.0.x/quickstart/#routing) in [Flask](https://palletsprojects.com/p/flask/) and handling variables in a route
+- creating a [HTML response](https://flask.palletsprojects.com/en/1.0.x/quickstart/#rendering-templates) in Flask by using a template ([Jinja](https://jinja.palletsprojects.com/en/2.9.x/templates/))
+- creating [dynamic templates](https://jinja.palletsprojects.com/en/2.9.x/templates/#list-of-control-structures) (using loops, conditions…) and displaying data from a MySQL database in HTML
 
 At the end of this,  HBNB came alive!
 
@@ -245,6 +266,7 @@ At the end of this,  HBNB came alive!
 
 ![popover2](https://user-images.githubusercontent.com/106752187/232055573-1112923c-f358-421f-a749-e6706a5bbdd1.jpg)
 
+ <br/>
 
 ## VERSION 3
 
