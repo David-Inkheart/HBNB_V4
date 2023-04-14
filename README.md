@@ -209,7 +209,7 @@ But the worst thing we could possibly do is to redo everything. The existing cod
 
 First, we were to fork an existing [codebase](https://github.com/justinmajetich/AirBnB_clone) where the console had already been built, run our checks, available tests. Then build on the existing, adding more test where necessary. 
 
-### Our original repo lives [**here**](https://github.com/David-Inkheart/AirBnB_clone_v2)
+### Our original repo lives [**HERE**](https://github.com/David-Inkheart/AirBnB_clone_v2)
 
 The major additions we did on this Iteration includes: Console improvement and using an ORM to map our objects to a database. The goals we were able to accomplish include: 
 
@@ -316,17 +316,73 @@ I and [Lateef](https://github.com/Wireless-XZ) collaborated on this and we learn
 <br/>
 
 ## VERSION 4
+  
+#### This current repo is a copy of the Version 4, which is also the final versioning of the clone. 
+I made this copy to write an extensive readme that chronicles my personal process and journey. 
+ 
+I collaborated with [Philip](https://github.com/Kaditcuy) on this version and the original repo for our joint work lies [HERE](https://github.com/Kaditcuy/AirBnB_clone_v4)
+  
+![image](https://user-images.githubusercontent.com/106752187/232129945-2c87ca6c-2410-4f68-a534-f25ad35dc7da.png)
+
+Did we fork a new [codebase](https://github.com/jzamora5/AirBnB_clone_v3) again?. YES😂
+
+Generally, we learned and implemented:
+  
+- How cool is it to request our own API? (Yes, we consumed our own API, the one we built and served in v3)
+- How to modify an [HTML element style](https://jquery-tutorial.net/selectors/using-elements-ids-and-classes/)
+- How to [get and update](https://jquery-tutorial.net/dom-manipulation/getting-and-setting-content/) an HTML element content
+- How to [modify the DOM](https://jquery-tutorial.net/dom-manipulation/the-append-and-prepend-methods/)
+- How to make a GET request with [JQuery Ajax](https://jquery-tutorial.net/ajax/introduction/)
+- How to make a POST request with [JQuery Ajax](https://jquery-tutorial.net/ajax/the-get-and-post-methods/)
+- How to listen/bind to DOM events
+- How to listen/bind to user events
+  
+
+### More Info
+
+We worked on the codebase using [Flasgger](https://github.com/flasgger/flasgger), we installed it locally first before starting the RestAPI:
+
+```
+$ sudo apt-get install -y python3-lxml
+$ sudo pip3 install flask_cors # if it was not installed yet
+$ sudo pip3 install flasgger
+```
+ 
+If anyone clones this repo and tries to install locally, and the RestAPI does not start, please read the error message. Based on the(se) error message(s), you will have to troubleshoot potential dependencies issues.
+ 
+Here are some possible sample solutions:
+
+ERROR: jsonschema exception
+  
+```  
+$ sudo pip3 uninstall -y jsonschema 
+$ sudo pip3 install jsonschema==3.0.1
+```
+Error: No module named 'pathlib2'
+  
+```
+$ sudo pip3 install pathlib2
+```
+  
+Some configuration files, backups and scripts used to transfer or install dependencies for this project have been removed from the school server (was shut down after finishing the program) and saved [HERE]() 
+ 
+<br/>
 
 ## Bugs
 No known bugs at this time. 
 
+
 ## Authors
+#### All contributors to the last part of the clone, including those whose codebase were forked and used: 
+  
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
 Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
 David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)  
 Ukanwoke Philip - [Github](https://github.com/Kaditcuy) / [Twitter](https://twitter.com/_Ukanwoke)  
 David Okolie - [Github](http://github.com/David-Inkheart) / [Twitter](https://twitter.com/David_Inkheart)  
-Second part of Airbnb: Joann Vuong
+Joann Vuong
+  
+ 
 ## License
 Public Domain. No copy write protection. 
