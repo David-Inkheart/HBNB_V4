@@ -1,7 +1,32 @@
-# AirBnB Clone - The Console
+# Simple AirBnB Clone
+
+This repo holds the culmination of **HBNB** - a Fullstack Project I did at [Alx-Software Engineering Programme](https://www.alxafrica.com/software-engineering/) that collectively covers fundamental concepts of higher level programming. It is built in stages(versions) and involves collaborating with peers as was advised in the programme. The goal of AirBnB Clone project was to eventually deploy on a server, a simple copy of the AirBnB Website(HBnB). See a snapshot of the success below. 
+
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/standard/semistandard)
 
-The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+![Hosted-AirBnB-Clone 2023-03-08 163931](https://user-images.githubusercontent.com/106752187/232021210-813cf56b-8462-4c29-a475-9bb74d52a332.jpg)
+
+### Below is a unique overview and not an exhaustive documentation of earlier processes and aspects of the project that lead to this final repo.
+
+## Table of Content
+* [THE CONSOLE](#the-console)
+* [Environment](#environment)
+* [Installation](#installation)
+* [File Descriptions](#file-descriptions)
+* [Examples of Console use](#examples-of-use)
+* [VERSION 2](#version-2)
+* [Console improvements](#console-improvements)
+* [Dataflow and Relationship diagram](#sample-dataflow-relationship-diagram-for-implementations)
+* [Additional updates 1: Web framework and Templating](#additional-updates-1)
+* [VERSION 3](#version-3)
+* [Bugs](#bugs)
+* [Authors](#authors)
+* [License](#license)
+
+## THE CONSOLE
+The console is the first segment of the AirBnB project. A command line interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+
+This aspect of the clone was co-built with [Lateef](https://github.com/Wireless-XZ) and the original repo resides [here](https://github.com/David-Inkheart/AirBnB_clone)
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
@@ -10,27 +35,18 @@ The console is the first segment of the AirBnB project at Holberton School that 
 * Update attributes of an object
 * Destroy an object
 
-## Table of Content
-* [Environment](#environment)
-* [Installation](#installation)
-* [File Descriptions](#file-descriptions)
-* [Usage](#usage)
-* [Examples of use](#examples-of-use)
-* [Bugs](#bugs)
-* [Authors](#authors)
-* [License](#license)
 
 ## Environment
 This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.4.3)
 
 ## Installation
-* Clone this repository: `git clone "https://github.com/alexaorrico/AirBnB_clone.git"`
-* Access AirBnb directory: `cd AirBnB_clone`
+* Clone this repository: `git clone "https://github.com/David-Inkheart/HBNB_V4.git"`
+* Access HBNB directory: `cd HBNB_V4`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
 
 ## File Descriptions
-[console.py](console.py) - the console contains the entry point of the command interpreter. 
+[console.py](console.py) - the console contains the entry point of the command interpreter.
 List of commands this console current supports:
 * `EOF` - exits console 
 * `quit` - exits console
@@ -39,10 +55,12 @@ List of commands this console current supports:
 * `destroy` - Deletes an instance based on the class name and id (save the change into the JSON file). 
 * `show` - Prints the string representation of an instance based on the class name and id.
 * `all` - Prints all string representation of all instances based or not on the class name. 
-* `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
+* `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file).
+
+![Console](https://user-images.githubusercontent.com/106752187/232034599-89a62f38-994e-431b-97ec-b3fb000229bf.jpg)
 
 #### `models/` directory contains classes used for this project:
-[base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
+[base_model.py](/models/base_model.py) - The BaseModel class from which future classes was be derived
 * `def __init__(self, *args, **kwargs)` - Initialization of the base model
 * `def __str__(self)` - String representation of the BaseModel class
 * `def save(self)` - Updates the attribute `updated_at` with the current datetime
@@ -131,7 +149,7 @@ TestBaseModel class:
 
 ## Examples of use
 ```
-vagrantAirBnB_clone$./console.py
+...web-01:~/HBNB_V4$ ./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
@@ -151,6 +169,86 @@ EOF  all  create  destroy  help  quit  show  update
 ** no instance found **
 (hbnb) quit
 ```
+
+
+## VERSION 2
+
+For this aspect, I collaborated with [Davidson](https://github.com/rotex5). One of the goals of this aspect was to simulate what is obtainable in the industry, where we will work on an existing codebase 90% of the time. Our first thoughts upon looking at it might include:
+
+“Who did this code?”, 
+“How it works?”, 
+“Where are unittests?”, 
+“Where is this?”, 
+“Why did they do that like this?”, 
+“I don’t understand anything.”, 
+“… I will refactor everything…”
+
+But the worst thing we could possibly do is to redo everything. The existing codebase might be perfect, or it might have errors. We were taught not to always trust the existing codebase!
+
+First, we were to fork an existing codebase where the console had already been built, run our checks, available tests. Then build on the existing, adding more test where necessary. 
+
+The major additions we did on this Iteration includes: Console improvement and using an ORM to map our objects to a database. The goals we were able to accomplish include: 
+
+* Implementation of Unit testing in a large project
+* Using `*args` and `**kwargs` and handling named arguments in a function
+* Creating a MySQL database and creating a MySQL user with granted privileges
+* Using an ORM(SqlAlchemy) to map a Python Class to MySQL table
+* Handling 2 different storage engines with the same codebase (jsonified File storage and MySQL db)
+* Using environment variables
+* Managing both storage engines and performing CRUD on both seamlessly
+
+Our original repo lives [here](https://github.com/David-Inkheart/AirBnB_clone_v2)
+
+## Console improvements
+
+- Updated the def do_create(self, arg): function of the command interpreter (console.py) to allow for object creation with given parameters:
+
+```
+Command syntax: create <Class name> <param 1> <param 2> <param 3>...
+Param syntax: <key name>=<value>
+Value syntax:
+String: "<value>" => starts with a double quote
+```
+
+- any double quote inside the value must be escaped with a backslash \
+- all underscores '_' must be replaced by spaces ' '.
+  Example: I want to set the string `My little house` to the attribute name, the command line must be name="My_little_house"
+
+```
+Float: <unit>.<decimal> => contains a dot .
+Integer: <number> => default case
+```
+
+If any parameter doesn’t fit with these requirements or can’t be recognized correctly by the program, it will be skipped
+
+## Sample dataflow-relationship diagram for implementations
+
+![image](https://user-images.githubusercontent.com/106752187/232045286-eeb2ecd3-b64e-4fa1-9ff4-511a923fd303.png)
+
+
+## Additional updates 1
+
+#### Additional updates were added by me as part of my learning journey with ALX. 
+
+![image](https://user-images.githubusercontent.com/106752187/232049489-51aa72e9-46a9-4ce7-ab4a-904fd3250717.png)
+
+The goal of this includes:
+
+- learning about Web Frameworks and how to build a web framework with Flask
+- defining routes in Flask and handling variables in a route
+- creating a HTML response in Flask by using a template ([Jinja](https://jinja.palletsprojects.com/en/2.9.x/templates/))
+- creating dynamic templates (using loops, conditions…) and displaying data from a MySQL database in HTML
+
+At the end of this,  HBNB came alive!
+
+![popover1](https://user-images.githubusercontent.com/106752187/232054802-d33c93b5-afdb-4b57-8307-8481a118b17a.jpg)
+
+![popover2](https://user-images.githubusercontent.com/106752187/232055573-1112923c-f358-421f-a749-e6706a5bbdd1.jpg)
+
+
+## VERSION 3
+
+
 
 ## Bugs
 No known bugs at this time. 
