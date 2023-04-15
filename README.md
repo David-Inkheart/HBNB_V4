@@ -30,6 +30,7 @@ See a snapshot of the success below.
 * [Additional updates 2: Web framework and Templating](#additional-updates-1)
 * [VERSION 3: RESTful API](#version-3)
 * [VERSION 4](#version-3)
+* [Additional updates 3: Application Server](#additional-updates-3)
 * [Bugs](#bugs)
 * [Authors](#authors)
 * [License](#license)
@@ -364,9 +365,31 @@ Error: No module named 'pathlib2'
 $ sudo pip3 install pathlib2
 ```
   
-Some configuration files, backups and scripts used to transfer or install dependencies for this project have been removed from the school server (was shut down after finishing the program) and saved [HERE](https://github.com/David-Inkheart/HBNB_V4/tree/main/hbnb-scripts-and-configs) 
  
 <br/>
+
+## Additional updates 3
+
+#### Additional updates were added by me as part of my learning journey with ALX. - DEPLOYMENT WITH GUNICORN
+
+![image](https://user-images.githubusercontent.com/106752187/232194320-6108fd19-899d-418d-b0b7-99366a17a04f.png)
+
+The web infrastructure is already serving web pages via Nginx that was installed in my first web stack project. While a web server can also serve dynamic content, this task is usually given to an application server. In this project I added this piece to The infrastructure, plugged it to the Nginx and made is serve my Airbnb clone project.
+
+
+In this Final deployment aspect. I learned and implemented:
+
+- Implemented a webserver and an application server in my web infrastructure
+- Served a [flask application](http://web-01.david-inkheart.tech/) with [Nginx and Gunicorn](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-16-04).
+- [Systemd script](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-16-04#create-a-systemd-unit-file) to automatically start [my Gunicorn processess](https://github.com/David-Inkheart/alx-system_engineering-devops/blob/master/0x1A-application_server/gunicorn.service) when server is booted, freeing me from having to manually restart them
+
+
+![Hosted-AirBnB-Clone 2023-03-08 163931](https://user-images.githubusercontent.com/106752187/232021210-813cf56b-8462-4c29-a475-9bb74d52a332.jpg)
+
+<br/>
+
+Some configuration files, backups and scripts used to transfer or install dependencies for this project have been removed from the school server (was shut down after finishing the program) and saved [HERE](https://github.com/David-Inkheart/HBNB_V4/tree/main/hbnb-scripts-and-configs) 
+
 
 ## Bugs
 No known bugs at this time. 
