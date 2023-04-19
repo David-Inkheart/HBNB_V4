@@ -1,7 +1,7 @@
 // ------------------check status of api where data is got from-----------//
 
 $(document).ready(function () {
-  const url = 'http://' + window.location.hostname + ':5001/api/v1/status/';
+  const url = 'http://web-01.david-inkheart.tech/api/v1/status/';
   $.get(url, function (response) {
     if (response.status === 'OK') {
       $('DIV#api_status').addClass('available');
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
   // ---------Get each place listing and insert into DOM-------------//
   $.ajax({
-    url: 'http://localhost:5001/api/v1/places_search/',
+    url: 'http://web-01.david-inkheart.tech/api/v1/places_search/',
     type: 'POST',
     dataType: 'json',
     data: '{}',
@@ -64,7 +64,7 @@ $(document).ready(function () {
 
   $('BUTTON').click(function () {
     $.ajax({
-      url: 'http://localhost:5001/api/v1/places_search/',
+      url: 'http://web-01.david-inkheart.tech/api/v1/places_search/',
       type: 'POST',
       data: JSON.stringify({
         states: Object.keys(states),
@@ -173,7 +173,7 @@ reviewsButton.click(function (e) {
 
     $.ajax({
 
-      url: `http://0.0.0.0:5001/api/v1/places/${placeId}/reviews`,
+      url: `http://web-01.david-inkheart.tech/api/v1/places/${placeId}/reviews`,
 
       type: 'GET',
 
